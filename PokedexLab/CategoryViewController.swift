@@ -74,12 +74,11 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndexPath = indexPath
         performSegue(withIdentifier: "toPokemon", sender: self)
     }
     
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "toPokemon") {
             if let dest = segue.destination as? PokemonInfoViewController {
